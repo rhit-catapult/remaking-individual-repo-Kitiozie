@@ -12,6 +12,7 @@ def main():
 
     while True:
         # TODO 4: Set the clock speed to 60 fps
+        clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
@@ -29,7 +30,7 @@ def main():
                     eye_x += 5
 
         screen.fill((255, 255, 255))  # white
-        clock.tick(60)
+       
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[pygame.K_UP]:
             eye_y -= 5 
