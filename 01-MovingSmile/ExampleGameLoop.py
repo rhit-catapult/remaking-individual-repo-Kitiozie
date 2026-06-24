@@ -36,6 +36,7 @@ while True:
 
         # Additional interactions with events
 
+
     # Done TODO 01: Make the background white by uncommenting the line below
     screen.fill(pygame.Color("Gray"))
 
