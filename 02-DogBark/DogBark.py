@@ -26,7 +26,7 @@ def main():
     # Prepare the text caption(s)
     # TODO 4: Create a font object with a size 28 font.
     
-    text_font = pygame.font.SysFont("georgia",28)
+    text_font = pygame.font.SysFont("times new roman",28)
     diff_font = pygame.font.SysFont("comic sans",10)
 
     
@@ -52,9 +52,9 @@ def main():
         # TODO 6: Draw (blit) the text image onto the screen in the middle bottom.
         # Hint: Commands like these might be useful..
         #          screen.get_width(), caption1.get_width(), image1.get_height()
-        caption_x= screen.get_width()/2 - bottom_caption.get_width()/2
-        caption_y = screen.get_height() - bottom_caption.get_height()
-        screen.blit(bottom_caption,())
+        caption_x= screen.get_width()/2 - bottom_font.get_width()/2
+        caption_y = screen.get_height() - bottom_font.get_height()
+        screen.blit(bottom_font,())
         # TODO 7: On your own, create a new bigger font and in white text place a 'funny' message on top of the image.
 
         # Update the screen
