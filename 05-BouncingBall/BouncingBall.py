@@ -6,6 +6,41 @@ import random
 # You will implement this module ENTIRELY ON YOUR OWN!
 
 # TODO: Create a Ball class.
+
+class Ball:
+    def __init__(self, screen):
+        self.screen = screen
+        self.radius = random.randint(10, 30)
+        self.x = random.randint(self.radius, 300 - self.radius)
+        self.y = random.randint(self.radius, 300 - self.radius)
+        self.speed_x = random.randint(3, 8)
+        self.speed_y = random.randint(3, 8)
+        self.color = (
+            random.randint(0, 255),
+            random.randint(0, 255),
+            random.randint(0, 255),
+        )
+
+    def move(self):
+        self.x += self.speed_x
+        self.y += self.speed_y
+
+        if self.x-self.radius<=0 or self.x+self.radius>=300:
+            self.speed_x=-self.speed_x
+
+        if self.y-self.radius<=0 or self.y+self.radius>=300:
+            self.speed_y=-self.speed_y
+       
+
+
+
+             
+
+    def draw(self):
+        pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
+
+
+    
 # TODO: Possible member variables: screen, color, x, y, radius, speed_x, speed_y
 # TODO: Methods: __init__, draw, move
 
@@ -17,7 +52,7 @@ def main():
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
 
-    # TODO: Create an instance of the Ball class called ball1
+    ball1 = Ball(screen)
 
     while True:
         for event in pygame.event.get():
@@ -27,8 +62,8 @@ def main():
         clock.tick(60)
         screen.fill(pygame.Color('gray'))
 
-        # TODO: Move the ball
-        # TODO: Draw the ball
+        ball1.move()
+        ball1.draw()
 
         pygame.display.update()
 
